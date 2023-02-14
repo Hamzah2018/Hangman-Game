@@ -53,4 +53,21 @@ let randomValueValue = randomPropValue[randomPropNumber];
 // console.log(randomValueValue);
 
 document.querySelector(".game-info .category span").innerHTML = randomPropName;
-// let randomValueValue =
+
+// Select Letters Guess Element
+let lettersGuessContainer = document.querySelector(".letters-guess"); 
+
+// Convert Chosen word to Array
+let lettersAndSpace = Array.from(randomValueValue);
+console.log(lettersAndSpace);
+// Create Spans Depend on Word
+lettersAndSpace.forEach(letter =>{
+    let emptySpan = document.createElement("span");
+    // If Letter is Space
+    if(letter === ' '){
+      // Add Class to Span
+      emptySpan.className = 'has-space';
+    }
+    // Append Spans to The Letters Guess Container
+    lettersGuessContainer.appendChild(emptySpan);
+});
