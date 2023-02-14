@@ -157,10 +157,15 @@ hr{
     text-transform: uppercase;
     cursor: pointer;
 }
+.letters .letter-box.clicked{
+    background-color: #222;
+    opacity: .2;
+    pointer-events: none;
+}
 .letters-guess{
     margin: 10px auto;
     background-color: #F8F8F8;
-    padding: flex;
+    padding: 20px;
     justify-content: center;
     min-height: 104px;
     z-index: 8;
@@ -176,9 +181,9 @@ hr{
     font-weight: bold;
     background-color: #FDFDFD;
     border-bottom: 3px solid #222;
-    background-color: firebrick;
+    /* background-color: firebrick; */
     transition: .3s;
-    z-index: 9;
+    z-index: 9999;
 }
 
 .letters-guess span.has-space{

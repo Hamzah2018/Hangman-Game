@@ -71,3 +71,39 @@ lettersAndSpace.forEach(letter =>{
     // Append Spans to The Letters Guess Container
     lettersGuessContainer.appendChild(emptySpan);
 });
+// Select Guss Spans
+let guessSpans = document.querySelectorAll(".letters-guess span"); 
+// Set The Chose Status
+let theStatus = false;
+// handle Clicking on letters
+document.addEventListener("click",
+(e)=>{
+  if(e.target.className === 'letter-box'){
+    e.target.classList.add("clicked");
+  
+    // Get Clicked Letter
+    let theClickedLetter = e.target.innerHTML.toLowerCase();
+    // The chosen word
+    let theChosenWord = Array.from(randomValueValue.toLowerCase());
+
+    theChosenWord.forEach((wordletter,wordIndex) =>{
+          
+          if(theClickedLetter == wordletter){
+            
+            // Set Status to Correct
+            theStatus = true;
+            // Loop on All Guess Spans
+            guessSpans.forEach((span,spanIndex)=>
+            {
+              if(wordIndex === spanIndex){
+                span.innerHTML =theClickedLetter;
+              }
+            }
+            );
+          }
+    });
+    //  Outside 
+    console.log(theStatus);
+  }
+}
+);
