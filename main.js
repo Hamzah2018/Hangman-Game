@@ -26,5 +26,31 @@ lettersArray.forEach(letters =>
 
 // Object of Words + Categories
 const words = {
-    
+    programming:["php","javascript","go","scala","fortran","c","mysql","python"],
+    movies: ["Avatar","Titanic","aftersun","angryman", "goodfellas","plan"],
+    people:["Hamzah Ismail","Cristiano Ronaldo","Will Smith","Dwayne Johnson","Elon Musk","William Gates","Jeffrey Bezos"],
+    countries:["Yemen","Palestine","Syria","Egypt","Tunisia","Algeria"]
 }
+
+// Get Random Property
+let allKeys = Object.keys(words);
+// Random Number Depend On Keys Lenght
+let randomPropNumber = Math.floor(Math.random() * allKeys.length);
+
+// Category  name
+let randomPropName = allKeys[randomPropNumber];
+// console.log(randomPropName);
+// Category element Depend in name
+let randomPropValue = words[randomPropName];
+// console.log(randomPropValue);
+// Random Number Depend on Words
+let randomValueNumber = Math.floor(Math.random() * randomPropValue.length);
+// The Value 
+let randomValueValue = randomPropValue[randomPropNumber];
+
+// console.log(randomPropValue);
+// console.log(randomValueNumber);
+// console.log(randomValueValue);
+
+document.querySelector(".game-info .category span").innerHTML = randomPropName;
+// let randomValueValue =
