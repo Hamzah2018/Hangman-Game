@@ -73,14 +73,18 @@ lettersAndSpace.forEach(letter =>{
 });
 // Select Guss Spans
 let guessSpans = document.querySelectorAll(".letters-guess span"); 
-// Set The Chose Status
-let theStatus = false;
+
+// Set Wrong Attempt
+let wrongAttempts = 0;
+// Select The Draw Element
+let theDraw = document.querySelector(".hangman-draw");
 // handle Clicking on letters
 document.addEventListener("click",
 (e)=>{
   if(e.target.className === 'letter-box'){
     e.target.classList.add("clicked");
-  
+  // Set The Chose Status
+    let theStatus = false;
     // Get Clicked Letter
     let theClickedLetter = e.target.innerHTML.toLowerCase();
     // The chosen word
@@ -103,7 +107,14 @@ document.addEventListener("click",
           }
     });
     //  Outside 
-    console.log(theStatus);
+    // console.log(theStatus);
+    // If Letter is Wrong
+    if(theStatus !== true){
+      // Increase The Wrong Attempts
+      wrongAttempts++;
+      // Add Class Wrong on The Draw Element
+      theDraw.classList.add(`wrong-${wrongAttempts}`);
+    }
   }
 }
 );
